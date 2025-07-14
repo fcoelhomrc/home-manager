@@ -219,6 +219,11 @@ in
             );
             Environment = lib.optionalString (cfg.waylandDisplay != "") "WAYLAND_DISPLAY=${cfg.waylandDisplay}";
           };
+
+          Install = {
+            WantedBy = config.wayland.systemd.target;
+          };
+
         };
       }
 
